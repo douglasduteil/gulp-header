@@ -1,4 +1,4 @@
-gulp-header
+gulp-header v0.4
 ===========
 
 Gulp extension to add a header to file(s) in the pipeline
