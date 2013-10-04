@@ -9,16 +9,16 @@ Structure
 ---------
 
 * `header` = function([headerText], [options])
-    * `headerText` string optional
-      * The text to use for the header to be prepended to the files in the stream.
-      * Will be formatted against the markdown processor, and passed an options object with the following fields added
-        * `filename` - the name of the file being added
-        * `now` - ISO-8601 formatted datetime
-        * `year` - the current year
-    * `options` object optional
-      * `file` string optional
-        * a file to use for the headerText, if headerText isn't specified
-      * other parameters will be passed through to the markdown processor against `headerText` 
+  * `headerText` string optional
+    * The text to use for the header to be prepended to the files in the stream.
+    * Will be formatted against the markdown processor, and passed an options object with the following fields added
+      * `filename` - the name of the file being added
+      * `now` - ISO-8601 formatted datetime
+      * `year` - the current year
+  * `options` object optional
+    * `file` string optional
+      * a file to use for the headerText, if headerText isn't specified
+    * other parameters will be passed through to the markdown processor against `headerText`
 
 Example
 -------
