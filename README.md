@@ -1,6 +1,8 @@
 gulp-header
 ===========
 
+[![Build Status](https://travis-ci.org/godaddy/gulp-header.png)](https://travis-ci.org/godaddy/gulp-header)
+
 Gulp extension to add a header to file(s) in the pipeline
 
     var header = require('gulp-header');
