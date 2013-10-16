@@ -36,12 +36,14 @@ gulp.task 'coverage', ->
   cp.execFile(
     'node',
     ['node_modules/mocha/bin/mocha','-R','html-cov','-u','bdd','--compilers','coffee:coffee-script','--require','chai',path.resolve(__dirname,'./test/')],
-  {},
-  (error, stdout, stderr) ->
-    console.log 'Saving coverage results...'
-    fs.createWriteStream('./lib-cov/coverage.html').write(stdout)
-    openCoverageDocumentInBrowser()
-    process.env.CODE_COVERAGE = codecoverage || 'false'
+    {},
+    (error, stdout, stderr) ->
+      console.log 'Saving coverage results...'
+      fs.createWriteStream('./lib-cov/coverage.html').write(stdout)
+      openCoverageDocumentInBrowser()
+      process.env.CODE_COVERAGE = codecoverage || 'false'
+      console.warn '\r\nComplete' #console.warn will flush the output
+      process.exit error?.code? or 0
   )
 
 openCoverageDocumentInBrowser = ->
