@@ -20,7 +20,7 @@ Structure
   * `options` object optional
     * `file` string optional
       * a file to use for the headerText, if headerText isn't specified
-    * other parameters will be passed through to the markdown processor against `headerText`
+    * other parameters will be passed through to the mustache processor against `headerText`
 
 Example
 -------
