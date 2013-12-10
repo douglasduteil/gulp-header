@@ -1,58 +1,12 @@
 {
   "name": "gulp-header",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Gulp extension to add header to file(s) in the pipeline.",
-  "main": "./lib/gulp-header.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "node node_modules/gulp/bin/gulp test",
-    "coverage": "node node_modules/gulp/bin/gulp coverage",
-    "functional": "node node_modules/gulp/bin/gulp functional"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/godaddy/gulp-header.git"
-  },
-  "keywords": [
-    "header",
-    "gulpplugin",
-    "eventstream"
-  ],
-  "author": {
-    "name": "GoDaddy.com",
-    "url": "http://github.com/godaddy"
-  },
-  "contributors": [
-    {
-      "name": "Michael J. Ryan",
-      "email": "mxryan@godaddy.com",
-      "url": "http://github.com/tracker1"
-    }
-  ],
+  "main": "./index.js",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/godaddy/gulp-header/issues"
-  },
   "dependencies": {
-    "defaults": "~1.0.0",
-    "clone": "~0.1.10",
-    "event-stream": "~3.0.16",
-    "xtend": "~2.1.1",
-    "graceful-fs": "~2.0.1",
-    "mustache": "~0.7.2"
-  },
-  "devDependencies": {
-    "mocha": "~1.13.0",
-    "gulp": "~1.0.0",
-    "chai": "~1.8.0",
-    "coffee-script": "~1.6.3",
-    "jscoverage": "~0.3.8",
-    "open": "0.0.4",
-    "sinon-chai": "~2.4.0",
-    "proxyquire": "~0.5.1",
-    "rimraf": "~2.2.2",
-    "sinon": "~1.7.3"
+    "event-stream": "*",
+    "gulp-util": "*",
+    "lodash.assign": "*"
   }
 }

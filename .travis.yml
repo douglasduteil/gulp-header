@@ -1,4 +1,0 @@
-language: node_js
-node_js:
-  - "0.10"
-script: "node ./node_modules/mocha/bin/mocha -u bdd -R spec --compilers coffee:coffee-script"
