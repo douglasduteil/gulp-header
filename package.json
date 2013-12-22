@@ -8,5 +8,12 @@
     "event-stream": "*",
     "gulp-util": "*",
     "lodash.assign": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
   }
 }
