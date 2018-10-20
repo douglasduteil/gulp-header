@@ -4,14 +4,14 @@
 
 var header = require('../');
 var should = require('should');
-var gutil = require('gulp-util');
+var vinyl = require('vinyl');
 require('mocha');
 
 describe('gulp-header', function() {
   var fakeFile;
 
   function getFakeFile(fileContent){
-    return new gutil.File({
+    return new vinyl({
       path: './test/fixture/file.js',
       cwd: './test/',
       base: './test/fixture/',
@@ -33,10 +33,10 @@ describe('gulp-header', function() {
         should.exist(newFile.path);
         should.exist(newFile.relative);
         should.exist(newFile.contents);
-        newFile.path.should.equal('./test/fixture/file.js');
+        newFile.path.should.equal('test/fixture/file.js');
         newFile.relative.should.equal('file.js');
         newFile.contents.toString().should.equal('Hello world');
-        ++file_count;
+        file_count++;
       });
 
       stream.once('end', function () {
@@ -96,7 +96,7 @@ describe('gulp-header', function() {
         ''].join('\n'));
       stream.on('data', function (newFile) {
         should.exist(newFile.contents);
-        newFile.contents.toString().should.equal('file.js\n./test/fixture/file.js\nHello world');
+        newFile.contents.toString().should.equal('file.js\ntest/fixture/file.js\nHello world');
       });
       stream.once('end', done);
 
@@ -129,7 +129,7 @@ describe('gulp-header', function() {
         should.exist(newFile.path);
         should.exist(newFile.relative);
         should.exist(newFile.contents);
-        newFile.path.should.equal('./test/fixture/file.js');
+        newFile.path.should.equal('test/fixture/file.js');
         newFile.relative.should.equal('file.js');
         newFile.contents.toString().should.equal([
           '//',
@@ -138,7 +138,7 @@ describe('gulp-header', function() {
           '//',
           'Hello world'
           ].join('\n'));
-        ++file_count;
+        file_count++;
       });
 
       stream.once('end', function () {

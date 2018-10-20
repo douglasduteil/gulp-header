@@ -5,13 +5,14 @@
   "main": "./index.js",
   "license": "MIT",
   "dependencies": {
-    "event-stream": "*",
-    "gulp-util": "*",
-    "lodash.assign": "*"
+    "event-stream": "4.0.1",
+    "lodash.assign": "4.2.0",
+    "lodash.template": "4.4.0",
+    "vinyl": "2.2.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "mocha": "5.2.0",
+    "should": "13.2.3"
   },
   "scripts": {
     "test": "mocha --reporter spec"

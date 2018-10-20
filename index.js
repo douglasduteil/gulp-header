@@ -5,17 +5,21 @@ var path = require('path');
 var fs = require('fs');
 
 var es = require('event-stream');
-var gutil = require('gulp-util');
+var template = require('lodash.template');
 var extend = require('lodash.assign');
 
 var headerPlugin = function(headerText, data) {
   headerText = headerText || '';
-  return es.map(function(file, cb){
+  
+  return es.map(function(file, callback){
+    var templateFunction = template(headerText);
+    var headerWithContent = templateFunction(extend({file: file}, data));
+    
     file.contents = Buffer.concat([
-      new Buffer(gutil.template(headerText, extend({file : file}, data))),
+      new Buffer(headerWithContent),
       file.contents
     ]);
-    cb(null, file);
+    callback(null, file);
   });
 };
 
